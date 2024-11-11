@@ -1,0 +1,1 @@
+This is a cypher for encrypting and decrypting text from file. Under the hood it uses Caesar crypting method 
