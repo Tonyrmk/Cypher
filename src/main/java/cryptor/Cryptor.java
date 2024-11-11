@@ -48,7 +48,4 @@ public class Cryptor {
         System.out.println("hello from bruto_force");
     }
 
-    private static String getStringForCrypting(File file){
-        return FileUtils.fileReader(file);
-    }
 }
