@@ -1,4 +1,5 @@
-import exceprions.IllegalArgumentException;
+
+import exceprions.WrongNumberArgumentsException;
 import runner.Runner;
 
 /**
@@ -9,6 +10,9 @@ public class App
 {
     public static void main( String[] args )
     {
-        Runner.run(args);
+        if (args.length < 2) {
+            throw new WrongNumberArgumentsException("please add at least 2 argument");}
+
+            Runner.run(args);
     }
 }
