@@ -12,7 +12,7 @@ public class FileUtils {
 
         try (BufferedReader reader = new BufferedReader(new FileReader(file.getAbsolutePath()))) {
             while (reader.ready()) {
-                result.append(reader.readLine());
+                result.append(reader.readLine()+"\n");
             }
         } catch (IOException exp) {
             exp.getMessage();
