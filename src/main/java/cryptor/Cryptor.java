@@ -18,7 +18,7 @@ public class Cryptor {
         for (char c : stringForDecrypting.toCharArray()) {
             decrypted.append(shiftCharacter(c, -shift));
         }
-        System.out.println(decrypted.toString());
+        //System.out.println(decrypted.toString());
         return decrypted.toString();
 
     }
@@ -39,7 +39,7 @@ public class Cryptor {
         int highestScore = Integer.MIN_VALUE;
         String bestDecryption = "";
 
-        System.out.println("Attempting brute-force decryption with validation...");
+        System.out.println("Attempting brute-force decryption");
 
 
         for (int shift = 1; shift <= LATIN_ALPHABET.length(); shift++) {
@@ -52,7 +52,7 @@ public class Cryptor {
             String decryptedAttempt = possibleDecryption.toString();
             int score = bruteForceValidation(decryptedAttempt);
 
-           //System.out.println("Shift " + shift + ": " + decryptedAttempt + " | Score: " + score);
+            //System.out.println("Shift " + shift + ": " + decryptedAttempt + " | Score: " + score);
 
             if (score >= highestScore) {
                 highestScore = score;
@@ -60,7 +60,7 @@ public class Cryptor {
             }
         }
 
-        System.out.println("Best decryption: " + bestDecryption + " | Score: " + highestScore);
+        //System.out.println("Best decryption: " + bestDecryption + " | Score: " + highestScore);
 
         return bestDecryption;
     }
@@ -116,5 +116,4 @@ public class Cryptor {
         int newIndex = (originalIndex + shift + alphabet.length()) % alphabet.length();
         return alphabet.charAt(newIndex);
     }
-
 }
