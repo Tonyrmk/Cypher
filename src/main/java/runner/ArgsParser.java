@@ -20,7 +20,7 @@ public class ArgsParser {
             }
         }
         else {
-            //throw new IllegalArgumentException("please add correct shift value for Encryption and Decryption");
+            //for brute_force mode
             return 0;
         }
 
@@ -35,7 +35,7 @@ public class ArgsParser {
         if (Files.exists(path)) {
             return new File(filePath);
         } else {
-            throw new FileNotExistException("the file is not found, please check the path");
+            throw new FileNotExistException("the file for is not found, please check the path");
         }
     }
 }

@@ -23,7 +23,7 @@ public class FileUtils {
 
 
     public static void fileWriter(File file, String result, Operation operation) {
-        String filename = getNewFileName(file, operation);
+        String filename = createNewFileName(file, operation);
         try (BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(filename))) {
             bufferedWriter.write(result);
             bufferedWriter.flush();
@@ -33,7 +33,7 @@ public class FileUtils {
 
     }
 
-    private static String getNewFileName(File file, Operation operation) {
+    private static String createNewFileName(File file, Operation operation) {
         String newFileName;
         String[] fileArray = file.getPath().split("\\.");
         if (fileArray.length > 1) {
